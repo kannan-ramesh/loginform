@@ -1,0 +1,81 @@
+
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src = "login.js" type="text/javascript"></script>
+</head>
+<style type="text/css">
+   .w3-button {
+    border: none;
+    display: inline-block;
+    padding: 20px 25px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.w3-input {
+    width: 130px;
+    height: 30px;
+    display: block;
+}
+#notice{
+  color: red;
+}
+#uname-error{
+  color: red;
+}
+#upass-error{
+  color: red;
+}
+
+</style>
+
+<body>
+  
+  <h2 class="w3-text-blue">Registrationform</h2>
+  <p>
+  <label class="w3-text-blue"><b>UserName:</b></label>
+  <input class="w3-input w3-border" id="uname"  name="name" type="text" placeholder="Username" required/></p>
+  <div id ="uname-error"></div>
+  <p>
+  <label class="w3-text-blue"><b>Password:</b></label>
+  <input class="w3-input w3-border"  id="upass" name="pass" type="text" placeholder="Password" required/></p>
+  <div id ="upass-error"></div>
+  <div id ='notice'></div>
+  <p>
+  <button class="w3-btn w3-blue" id="regForm" onclick="valitation()" type="Register">Register</button></p>
+  <script type="text/javascript">
+      var valitation = function(){
+        var name = document.getElementById('uname').value;
+        var pass = document.getElementById('upass').value;
+
+        
+
+        if(name =='' && pass==''){
+          document.getElementById('notice').innerHTML='your fields still blank out';
+        }
+        else{
+          // if(name==name&&pass ==pass){
+          //   document.getElementById('notice').innerHTML='successfull login';
+            // res.render('completeprofile',{profileData:user});
+          if (name==''){
+            document.getElementById('uname-error').innerHTML='enter Username';
+          } if (pass==''){
+            document.getElementById('upass-error').innerHTML='enter Password';
+          }
+          
+        
+          
+        }
+        console.log(name);
+        console.log(pass);
+      }
+  </script>
+</form>
+</body>
+</html>
